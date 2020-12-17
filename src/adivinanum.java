@@ -23,6 +23,9 @@ public class adivinanum {
 
             if (numMaquina == introducido) {
                 System.out.println("¡Has acertado!");
+                System.out.println("Has ganado 5€");
+                saldoMaquina=saldoMaquina-5;
+                saldoPersona=saldoPersona+5;
                 contador = 5;
             } else if (contador == 4) {
                 System.out.println("Lo siento: ¡has perdido!.");
@@ -68,7 +71,11 @@ public class adivinanum {
                         do {
                             if (numMaquina == introducido) {
                                 System.out.println("¡Has acertado!");
-                                contador = 1;
+                                System.out.println("Has ganado 5€");
+                                saldoMaquina=saldoMaquina-premio;
+                                saldoPersona=saldoPersona+premio;
+                                contador = 2;
+                                salir= 1;
                             } else if (contador == 1) {
                                 System.out.println("Lo siento: ¡has perdido!.");
                                 contador++;
@@ -95,6 +102,8 @@ public class adivinanum {
                         break;
                 }
             }
+            System.out.println("Saldo Maquina: "+saldoMaquina+"€");
+            System.out.println("Saldo Persona: "+saldoPersona+"€");
         }
     }
 }
